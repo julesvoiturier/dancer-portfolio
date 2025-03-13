@@ -1,15 +1,17 @@
-import Image from "next/image";
+import LeftSide from "@/modules/LeftSide";
+import RightSide from "@/modules/RightSide";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <p className="text-small">text-small</p>
-      <p className="text-base">text-base</p>
-      <p className="w-50 text-base">
-        leelou lancel lorem impsum dolor sit amet
-      </p>
-      <p className="text-title">text-title</p>
-      <p className="text-subtitle">text-subtitle</p>
+    <div className="flex">
+      <section className="oveflow-x-scroll fixed flex h-screen w-2/3 justify-end border-r">
+        <LeftSide />
+      </section>
+
+      <section className="ml-[66.666%] h-[10000px] w-1/3">
+        <RightSide />
+      </section>
     </div>
   );
 }
