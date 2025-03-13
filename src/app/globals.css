@@ -41,4 +41,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-display);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }

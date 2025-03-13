@@ -5,7 +5,9 @@ export default function Home() {
     <div>
       <p className="text-small">text-small</p>
       <p className="text-base">text-base</p>
-      <p className="text-large">text-large</p>
+      <p className="w-50 text-base">
+        leelou lancel lorem impsum dolor sit amet
+      </p>
       <p className="text-title">text-title</p>
       <p className="text-subtitle">text-subtitle</p>
     </div>
