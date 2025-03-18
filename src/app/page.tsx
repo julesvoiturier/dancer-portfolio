@@ -1,17 +1,21 @@
-import LeftSide from "@/modules/LeftSide";
-import RightSide from "@/modules/RightSide";
-import Link from "next/link";
+"use client";
+
+import ContentSection from "@/modules/ContentSection";
+import data from "./../../public/data/performances.json";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 export default function Home() {
+  useSmoothScroll();
+
   return (
     <div className="flex">
-      <section className="oveflow-x-scroll fixed flex h-screen w-2/3 justify-end border-r">
-        <LeftSide />
-      </section>
+      <header className="fixed flex h-screen w-[63%] justify-end overflow-x-scroll border-r border-border bg-[url('../../public/img/image.jpg')] bg-cover bg-center">
+        {/* <LeftSide /> */}
+      </header>
 
-      <section className="ml-[66.666%] h-[10000px] w-1/3">
-        <RightSide />
-      </section>
+      <main className="ml-[63%] w-[37%]">
+        <ContentSection data={data} title="Performances" />
+      </main>
     </div>
   );
 }
