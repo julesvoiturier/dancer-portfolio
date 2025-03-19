@@ -1,29 +1,143 @@
-{
-  "SectionTitle": "Performances",
-  "SectionArticles": [
-    {
-      "title": "Project 1",
-      "date": "2022",
-      "paragraphs": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-        "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
-      ]
-    },
-    {
-      "title": "Project 1",
-      "date": "2022",
-      "paragraphs": [
-        "Curabitur vehicula lectus nec nulla fermentum, vel sodales justo tincidunt. Praesent tincidunt enim sit amet eros feugiat, a luctus erat sagittis.",
-        "Quisque scelerisque, nunc in pharetra faucibus, velit erat elementum nulla, sit amet interdum eros lorem ac neque."
-      ]
-    },
-    {
-      "title": "Project 1",
-      "date": "2022",
-      "paragraphs": [
-        "Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce congue erat a purus varius, at malesuada mi sodales.",
-        "Mauris eget justo non urna bibendum pharetra. Proin in felis in justo pellentesque interdum. Ut sagittis nulla at sapien condimentum, eget tincidunt nisi suscipit."
-      ]
-    }
-  ]
-}
+[
+  {
+    "SectionTitle": "Performances",
+    "SectionArticles": [
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      },
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Curabitur vehicula lectus nec nulla fermentum, vel sodales justo tincidunt. Praesent tincidunt enim sit amet eros feugiat, a luctus erat sagittis.",
+          "Quisque scelerisque, nunc in pharetra faucibus, velit erat elementum nulla, sit amet interdum eros lorem ac neque."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      },
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce congue erat a purus varius, at malesuada mi sodales.",
+          "Mauris eget justo non urna bibendum pharetra. Proin in felis in justo pellentesque interdum. Ut sagittis nulla at sapien condimentum, eget tincidunt nisi suscipit."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      }
+    ]
+  },
+  {
+    "SectionTitle": "Teaching",
+    "SectionArticles": [
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      },
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Curabitur vehicula lectus nec nulla fermentum, vel sodales justo tincidunt. Praesent tincidunt enim sit amet eros feugiat, a luctus erat sagittis.",
+          "Quisque scelerisque, nunc in pharetra faucibus, velit erat elementum nulla, sit amet interdum eros lorem ac neque."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      },
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce congue erat a purus varius, at malesuada mi sodales.",
+          "Mauris eget justo non urna bibendum pharetra. Proin in felis in justo pellentesque interdum. Ut sagittis nulla at sapien condimentum, eget tincidunt nisi suscipit."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      }
+    ]
+  },
+  {
+    "SectionTitle": "Background",
+    "SectionArticles": [
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      },
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Curabitur vehicula lectus nec nulla fermentum, vel sodales justo tincidunt. Praesent tincidunt enim sit amet eros feugiat, a luctus erat sagittis.",
+          "Quisque scelerisque, nunc in pharetra faucibus, velit erat elementum nulla, sit amet interdum eros lorem ac neque."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      },
+      {
+        "title": "Project 1",
+        "date": "2022",
+        "topParagraphs": [
+          "Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce congue erat a purus varius, at malesuada mi sodales.",
+          "Mauris eget justo non urna bibendum pharetra. Proin in felis in justo pellentesque interdum. Ut sagittis nulla at sapien condimentum, eget tincidunt nisi suscipit."
+        ],
+        "image": "../../public/img/image.jpg",
+        "imageDescription": "Image description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+        "bottomParagraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Suspendisse potenti. Cras in nulla nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna in nunc scelerisque aliquet."
+        ]
+      }
+    ]
+  }
+]

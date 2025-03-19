@@ -2,11 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis"; // Import Lenis for smooth scroll
+import { useLenis } from "lenis/react";
 
 interface ContentSectionArticleProps {
   title: string;
   date: string;
-  paragraphs: string[];
+  topParagraphs: string[];
+  bottomParagraphs: string[];
+  image: string;
+  imageDescription: string;
   index: number;
   sectionTitleHeight: number;
 }
@@ -14,25 +18,23 @@ interface ContentSectionArticleProps {
 export default function ContentSectionArticle({
   title,
   date,
-  paragraphs,
+  topParagraphs,
+  bottomParagraphs,
+  image,
+  imageDescription,
   index,
   sectionTitleHeight,
 }: ContentSectionArticleProps) {
+  const lenis = useLenis();
+
   const containerRef = useRef<HTMLElement | null>(null);
-  const titleRef = useRef<HTMLElement | null>(null);
+  const titleRef = useRef<HTMLDivElement | null>(null);
+  const [hasTitleReachedTop, setHasTitleReachedTop] = useState(false);
 
   const titleHeight = titleRef.current?.offsetHeight || 0;
   const dynamicTopValue = titleHeight * index + sectionTitleHeight;
 
-  const [hasTitleReachedTop, setHasTitleReachedTop] = useState(false);
-
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      overscroll: false,
-    });
-
     const handleLenisScroll = () => {
       if (!containerRef.current) return;
       const { top } = containerRef.current.getBoundingClientRect();
@@ -43,23 +45,16 @@ export default function ContentSectionArticle({
       }
     };
 
-    // Attach the scroll event to Lenis
-    lenis.on("scroll", handleLenisScroll);
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-    // Cleanup on unmount
-    return () => {
-      lenis.destroy();
-    };
+    lenis?.on("scroll", handleLenisScroll);
+    return () => lenis?.destroy();
   }, [dynamicTopValue]);
 
   return (
-    <section ref={containerRef} className="relative">
+    <section
+      ref={containerRef}
+      className="relative"
+      // style={{ marginTop: sectionTitleHeight }}
+    >
       <div
         ref={titleRef}
         className={`sticky z-30 w-full border-t border-border bg-background px-8 py-5`}
@@ -85,14 +80,23 @@ export default function ContentSectionArticle({
         }}
       ></div>
 
-      <article className="mb-8 min-h-dvh px-8 pb-8 text-gray-400 transition-all">
-        {paragraphs.map((paragraph, idx) => (
-          <p key={idx} className="py-4">
-            {paragraph}
-          </p>
-        ))}
-        <div className="h-50 w-full rounded-sm bg-border"></div>
-      </article>
+      <div className="mb-8 flex flex-col gap-8 px-8 pb-8 text-gray-400 transition-all">
+        <div className="flex flex-col gap-4">
+          {topParagraphs.map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className="h-50 w-full rounded-sm bg-border"
+        />
+        <p>{imageDescription}</p>
+        <div className="flex flex-col gap-4">
+          {bottomParagraphs.map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

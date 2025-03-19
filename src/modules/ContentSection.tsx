@@ -1,27 +1,39 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ContentSectionArticle from "./ContentSectionArticle";
+import { Article } from "@/utils/global.types";
 
 interface ContentSectionProps {
-  data: any;
+  data: Article[];
   title: string;
+  index: number;
 }
 
-export default function ContentSection({ data, title }: ContentSectionProps) {
-  const sectionTitleRef = useRef<HTMLElement | null>(null);
-  const sectionTitleHeight = sectionTitleRef.current?.offsetHeight || 0;
+export default function ContentSection({
+  data,
+  title,
+  index,
+}: ContentSectionProps) {
+  const sectionTitleRef = useRef<HTMLDivElement>(null);
+  const [sectionTitleHeight, setSectionTitleHeight] = useState(0);
+
+  useEffect(() => {
+    if (sectionTitleRef.current)
+      setSectionTitleHeight(sectionTitleRef.current.offsetHeight);
+  }, []);
 
   return (
-    <section className="min-h-dvh">
+    <section className="sticky min-h-dvh bg-background">
       <div
         ref={sectionTitleRef}
-        className="fixed top-0 z-20 mb-8 w-full bg-background p-8"
+        className="sticky top-0 z-20 w-full bg-background p-8 text-subtitle font-medium"
       >
-        <h1 className="text-subtitle font-medium">{title}</h1>
+        {title}
       </div>
-      <div className="relative mt-28">
-        {data.SectionArticles.map((article, index) => (
+
+      <div className="min-h-dvh">
+        {data.map((article: Article, index: number) => (
           <ContentSectionArticle
             {...article}
             key={index}
