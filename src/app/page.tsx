@@ -2,27 +2,26 @@
 
 import ContentSection from "@/modules/ContentSection";
 import data from "./../../public/data/performances.json";
-import ReactLenis from "lenis/react";
+import ContentSectionsContainer from "@/modules/ContentSectionsContainer";
 
 export default function Home() {
   return (
-    <ReactLenis root>
-      <div className="flex">
-        <header className="fixed flex h-screen w-[63%] justify-end overflow-x-scroll border-r border-border">
-          {/* <LeftSide /> */}
-        </header>
+    <div className="flex">
+      <header className="flex border-border border-r h-screen justify-end w-[63%] fixed overflow-x-scroll">
+        {/* <LeftSide /> */}
+      </header>
 
-        <main className="ml-[63%] w-[37%]">
-          {data?.map((section: any, index: number) => (
-            <ContentSection
-              key={index}
-              index={index}
-              data={section.SectionArticles}
-              title={section.SectionTitle}
-            />
-          ))}
-        </main>
-      </div>
-    </ReactLenis>
+      <main className="w-[37%] ml-[63%]">
+        <ContentSectionsContainer sectionsData={data}/>
+        {/* {data?.map((section: any, index: number) => (
+          <ContentSection
+            key={index}
+            index={index}
+            data={section.SectionArticles}
+            title={section.SectionTitle}
+          />
+        ))} */}
+      </main>
+    </div>
   );
 }
