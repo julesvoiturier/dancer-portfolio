@@ -3,25 +3,22 @@
 import ContentSection from "@/modules/ContentSection";
 import data from "./../../public/data/performances.json";
 import ContentSectionsContainer from "@/modules/ContentSectionsContainer";
+import Footer from "@/modules/Footer";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 export default function Home() {
   return (
     <div className="flex">
-      <header className="flex border-border border-r h-screen justify-end w-[63%] fixed overflow-x-scroll">
-        {/* <LeftSide /> */}
+      <header className="fixed flex h-screen w-[63%] translate-x-[1/2] justify-start overflow-x-scroll p-8">
+        <Sidebar />
       </header>
 
-      <main className="w-[37%] ml-[63%]">
-        <ContentSectionsContainer sectionsData={data}/>
-        {/* {data?.map((section: any, index: number) => (
-          <ContentSection
-            key={index}
-            index={index}
-            data={section.SectionArticles}
-            title={section.SectionTitle}
-          />
-        ))} */}
+      <main className="ml-[63%] w-[37%] border-l border-border">
+        <ContentSectionsContainer sectionsData={data} />
+        <Footer />
       </main>
+
+      <div className="fixed right-0 -z-20 h-screen border-l border-border" />
     </div>
   );
 }

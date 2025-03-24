@@ -46,11 +46,11 @@ export default function ContentSection({
   return (
     <section
       ref={sectionContainerRef}
-      className={`${isFullSectionScrolled ? "opacity-0 ease-in" : ""} top-0 min-h-dvh border-b border-border bg-background transition-all duration-100`}
+      className={`${isFullSectionScrolled ? "opacity-0" : "opacity-100"} top-0 min-h-dvh border-b border-border bg-background transition-all duration-100 ease-in-out`}
     >
       <div
         ref={sectionTitleRef}
-        className="bg-background p-8 text-subtitle w-full font-medium sticky top-0 z-10"
+        className={`sticky top-0 z-10 w-full bg-background p-8 text-subtitle font-medium text-zinc-500`}
       >
         {title}
       </div>
@@ -62,7 +62,6 @@ export default function ContentSection({
             key={index}
             index={index}
             sectionTitleHeight={sectionTitleHeight}
-            isFullSectionScrolled={isFullSectionScrolled}
           />
         ))}
       </div>

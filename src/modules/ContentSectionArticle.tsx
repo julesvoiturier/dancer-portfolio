@@ -12,7 +12,6 @@ interface ContentSectionArticleProps {
   imageDescription: string;
   index: number;
   sectionTitleHeight: number;
-  isFullSectionScrolled: boolean;
 }
 
 export default function ContentSectionArticle({
@@ -24,7 +23,6 @@ export default function ContentSectionArticle({
   imageDescription,
   index,
   sectionTitleHeight,
-  isFullSectionScrolled,
 }: ContentSectionArticleProps) {
   const lenis = useLenis();
 
@@ -61,11 +59,11 @@ export default function ContentSectionArticle({
           position: hasTitleReachedTop ? "fixed" : "sticky",
         }}
       >
-        <div className="flex bg-border rounded-full absolute items-center left-0 size-3 top-0 translate-x-[-50%] translate-y-[-50%] z-30">
-          <p className="text-nowrap text-sm absolute opacity-50 right-7">
+        <div className="absolute top-0 left-0 z-30 flex size-3 translate-x-[-50%] translate-y-[-50%] items-center rounded-full bg-border">
+          <p className="absolute right-5 text-sm text-nowrap opacity-50">
             {date}
           </p>
-          <h3 className="text-lg text-nowrap text-white absolute font-bold left-7">
+          <h3 className="absolute left-9 text-lg font-bold text-nowrap text-zinc-200">
             {title}
           </h3>
         </div>
@@ -78,7 +76,7 @@ export default function ContentSectionArticle({
         }}
       ></div>
 
-      <div className="flex flex-col text-gray-400 gap-8 mb-8 pb-8 px-8 transition-all">
+      <div className="mb-8 flex flex-col gap-8 px-8 pb-8 text-gray-400 transition-all">
         <div className="flex flex-col gap-3">
           {topParagraphs.map((paragraph, idx) => (
             <p className="leading-tight" key={idx}>
@@ -89,9 +87,9 @@ export default function ContentSectionArticle({
         <div className="flex flex-col gap-3">
           <div
             style={{ backgroundImage: `url(${image})` }}
-            className="bg-border h-50 rounded-sm w-full"
+            className="h-50 w-full rounded-sm bg-border"
           />
-          <p className="border-border border-t opacity-50 pt-1">
+          <p className="border-t border-border pt-1 opacity-50">
             - {imageDescription}
           </p>
         </div>
