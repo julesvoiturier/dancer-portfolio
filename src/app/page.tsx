@@ -5,15 +5,19 @@ import data from "./../../public/data/performances.json";
 import ContentSectionsContainer from "@/modules/ContentSectionsContainer";
 import Footer from "@/modules/Footer";
 import Sidebar from "@/components/sidebar/Sidebar";
+import ScrollVideo from "@/components/scroll-video/ScrollVideo";
 
 export default function Home() {
   return (
-    <div className="flex">
-      <header className="fixed flex h-screen w-[63%] translate-x-[1/2] justify-start overflow-x-scroll p-8">
+    <div className="flex h-dvh w-full">
+      <header className="fixed flex h-screen w-[63%] translate-x-[1/2] justify-start overflow-hidden">
         <Sidebar />
+        <ScrollVideo />
       </header>
 
-      <main className="ml-[63%] w-[37%] border-l border-border">
+      {/* <ScrollVideo /> */}
+
+      <main className="ml-[63%] w-[37%]">
         <ContentSectionsContainer sectionsData={data} />
         <Footer />
       </main>

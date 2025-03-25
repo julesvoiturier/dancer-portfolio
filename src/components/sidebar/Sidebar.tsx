@@ -3,7 +3,7 @@ import data from "./../../../public/data/performances.json";
 
 export default function Sidebar({ initialPosition }: any) {
   return (
-    <div className={`h-full w-1/4`}>
+    <div className={`fixed z-20 h-full w-1/4 p-8`}>
       <div className="relative h-full">
         <div className="absolute top-0 left-0 text-primary-foreground">
           <p className="text-subtitle leading-none font-bold text-nowrap">
@@ -15,7 +15,7 @@ export default function Sidebar({ initialPosition }: any) {
         <div className="absolute top-1/2 left-0 flex w-full -translate-y-1/2 flex-col items-start text-base leading-tight">
           {data.map((section, index) => (
             <div className="group relative" key={index}>
-              <button className="z-20 w-full cursor-pointer bg-background px-3 font-semibold text-zinc-600">
+              <button className="z-20 w-full cursor-pointer px-3 font-semibold text-zinc-600">
                 {section.SectionTitle}
               </button>
             </div>

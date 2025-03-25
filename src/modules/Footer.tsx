@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="inset-shadow sticky bottom-0 -z-10 h-auto w-full bg-background p-6 pt-8 text-zinc-600">
@@ -8,14 +10,32 @@ export default function Footer() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
         habitant morbi tristique senectus et netus et malesuada fames ac turpis
         egestas.", "Suspendisse potenti. Cras in nulla nec ex fermentum
-        ultricies non eu urna. Nulla facilisi. Donec at magna in nunc
-        scelerisque aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas.", "Suspendisse potenti. Cras in nulla
-        nec ex fermentum ultricies non eu urna. Nulla facilisi. Donec at magna
-        in nunc scelerisque aliquet.
+        ultricies non eu urna. Nulla facilisi.
       </p>
-      <p>Designed and coded by Jules Voiturier</p>
+      <div className="">
+        <div className="flex items-center gap-3">
+          <p className="text-nowrap">Background video by</p>
+          <hr className="w-full text-border" />
+          <a
+            href="https://www.linkedin.com/in/jules-voiturier/"
+            title="LinkedIn"
+            className="text-nowrap text-orange-600"
+          >
+            @brannonyaufilm
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <p className="text-nowrap">Developped and designed by</p>
+          <hr className="w-full text-border" />
+          <a
+            href="https://www.linkedin.com/in/jules-voiturier/"
+            title="LinkedIn"
+            className="text-nowrap text-orange-600"
+          >
+            Jules Voiturier
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

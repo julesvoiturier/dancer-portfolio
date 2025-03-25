@@ -59,7 +59,7 @@ export default function ContentSectionArticle({
           position: hasTitleReachedTop ? "fixed" : "sticky",
         }}
       >
-        <div className="absolute top-0 left-0 z-30 flex size-3 translate-x-[-50%] translate-y-[-50%] items-center rounded-full bg-border">
+        <div className="absolute top-0 left-0 z-30 flex size-2.5 translate-x-[-50%] translate-y-[-50%] items-center rounded-full bg-border">
           <p className="absolute right-5 text-sm text-nowrap opacity-50">
             {date}
           </p>
@@ -85,13 +85,11 @@ export default function ContentSectionArticle({
           ))}
         </div>
         <div className="flex flex-col gap-3">
-          <div
+          {/* <div
             style={{ backgroundImage: `url(${image})` }}
             className="h-50 w-full rounded-sm bg-border"
-          />
-          <p className="border-t border-border pt-1 opacity-50">
-            - {imageDescription}
-          </p>
+          /> */}
+          <p className="opacity-50">- {imageDescription}</p>
         </div>
         <div className="flex flex-col gap-3">
           {bottomParagraphs.map((paragraph, idx) => (
