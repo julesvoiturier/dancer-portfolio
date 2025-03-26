@@ -19,7 +19,7 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/jules-voiturier/"
             title="LinkedIn"
-            className="text-nowrap text-orange-600"
+            className="text-nowrap text-primary-foreground"
           >
             @brannonyaufilm
           </a>
@@ -30,7 +30,7 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/jules-voiturier/"
             title="LinkedIn"
-            className="text-nowrap text-orange-600"
+            className="text-nowrap text-primary-foreground"
           >
             Jules Voiturier
           </a>

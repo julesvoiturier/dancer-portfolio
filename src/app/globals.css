@@ -24,8 +24,8 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --primary-foreground: var(--color-orange-600);
-  --primary-background: var(--color-orange-950);
+  --primary-foreground: var(--color-red-600);
+  --primary-background: var(--color-red-950);
 
   --border: #323232;
 }
@@ -42,7 +42,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #151515;
+    --background: #080808;
     --foreground: #ededed;
   }
 }

@@ -8,28 +8,19 @@ export function ScrollVideo() {
   const { scrollYProgress } = useScroll();
   const [isClient, setIsClient] = useState(false);
 
-  // Detect if we're on the client side
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   const images = useMemo(() => {
     const loadedImages: HTMLImageElement[] = [];
-
     if (isClient) {
-      // Load images only if we're on the client side
       for (let i = 1; i <= 2045; i++) {
         const idx = String(i).padStart(4, "0");
         const img = new Image();
-        img.src = `/vid/${idx}.jpg`;
+        img.src = `/frames/${idx}.jpg`;
         loadedImages.push(img);
       }
     }
-
     return loadedImages;
-  }, [isClient]); // Recompute when isClient changes
+  }, [isClient]);
 
-  // We want to map scroll progress to the image index, and the total number of images
   const totalFrames = images.length;
   const currentIndex = useTransform(
     scrollYProgress,
@@ -82,6 +73,10 @@ export function ScrollVideo() {
     render(scaledIndex);
   });
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Resize the canvas when window size changes
   useEffect(() => {
     const handleResize = () => {
@@ -96,7 +91,7 @@ export function ScrollVideo() {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Initial size adjustment
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -106,7 +101,7 @@ export function ScrollVideo() {
   return (
     <div className="h-full w-full">
       <canvas
-        className="-z-20 scale-130 object-fill grayscale"
+        className="-z-20 scale-135 object-fill grayscale"
         ref={ref}
       ></canvas>
     </div>

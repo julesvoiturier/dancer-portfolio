@@ -46,11 +46,11 @@ export default function ContentSection({
   return (
     <section
       ref={sectionContainerRef}
-      className={`${isFullSectionScrolled ? "opacity-0" : "opacity-100"} top-0 min-h-dvh border-b border-border bg-background transition-all duration-100 ease-in-out`}
+      className={`${isFullSectionScrolled ? "opacity-0" : "opacity-100"} top-0 min-h-dvh border-b border-border bg-background transition-all duration-200 ease-in-out`}
     >
       <div
         ref={sectionTitleRef}
-        className={`sticky top-0 z-10 w-full bg-background p-8 text-subtitle font-medium text-zinc-500`}
+        className={`sticky top-0 z-10 w-full bg-background p-8 text-subtitle font-medium text-zinc-200`}
       >
         {title}
       </div>

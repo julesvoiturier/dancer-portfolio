@@ -60,7 +60,10 @@ export default function ContentSectionArticle({
         }}
       >
         <div className="absolute top-0 left-0 z-30 flex size-2.5 translate-x-[-50%] translate-y-[-50%] items-center rounded-full bg-border">
-          <p className="absolute right-5 text-sm text-nowrap">{date}</p>
+          <p className="left:10 absolute text-sm text-nowrap lg:right-5">
+            {date}
+          </p>
+          <div className="left:15 absolute h-[1px] w-dvw bg-border text-sm text-nowrap opacity-40 mix-blend-exclusion lg:right-16" />
           <h3 className="absolute left-9 text-lg font-bold text-nowrap text-zinc-200">
             {title}
           </h3>
@@ -77,7 +80,7 @@ export default function ContentSectionArticle({
       <div className="mb-8 flex flex-col gap-8 px-8 pb-8 text-gray-400 transition-all">
         <div className="flex flex-col gap-3">
           {topParagraphs.map((paragraph, idx) => (
-            <p className="leading-tight" key={idx}>
+            <p className="leading-tight font-light" key={idx}>
               {paragraph}
             </p>
           ))}
@@ -91,7 +94,7 @@ export default function ContentSectionArticle({
         </div>
         <div className="flex flex-col gap-3">
           {bottomParagraphs.map((paragraph, idx) => (
-            <p className="leading-tight" key={idx}>
+            <p className="leading-tight font-light" key={idx}>
               {paragraph}
               {paragraph}
               {paragraph}
