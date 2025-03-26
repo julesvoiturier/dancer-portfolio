@@ -6,8 +6,7 @@ import { useMotionValueEvent, useScroll, useTransform } from "motion/react";
 export function ScrollVideo() {
   const ref = useRef<HTMLCanvasElement>(null);
   const { scrollYProgress } = useScroll();
-
-  const [isClient, setIsClient] = useState(false); // To detect if we're on the client-side
+  const [isClient, setIsClient] = useState(false);
 
   // Detect if we're on the client side
   useEffect(() => {
@@ -19,7 +18,7 @@ export function ScrollVideo() {
 
     if (isClient) {
       // Load images only if we're on the client side
-      for (let i = 1; i <= 1023; i++) {
+      for (let i = 1; i <= 2045; i++) {
         const idx = String(i).padStart(4, "0");
         const img = new Image();
         img.src = `/vid/${idx}.jpg`;

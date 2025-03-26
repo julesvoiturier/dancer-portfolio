@@ -1,6 +1,6 @@
 "use client";
 
-import { RefObject, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
 
 interface ContentSectionArticleProps {
@@ -60,9 +60,7 @@ export default function ContentSectionArticle({
         }}
       >
         <div className="absolute top-0 left-0 z-30 flex size-2.5 translate-x-[-50%] translate-y-[-50%] items-center rounded-full bg-border">
-          <p className="absolute right-5 text-sm text-nowrap opacity-50">
-            {date}
-          </p>
+          <p className="absolute right-5 text-sm text-nowrap">{date}</p>
           <h3 className="absolute left-9 text-lg font-bold text-nowrap text-zinc-200">
             {title}
           </h3>
@@ -85,15 +83,18 @@ export default function ContentSectionArticle({
           ))}
         </div>
         <div className="flex flex-col gap-3">
-          {/* <div
+          <div
             style={{ backgroundImage: `url(${image})` }}
             className="h-50 w-full rounded-sm bg-border"
-          /> */}
+          />
           <p className="opacity-50">- {imageDescription}</p>
         </div>
         <div className="flex flex-col gap-3">
           {bottomParagraphs.map((paragraph, idx) => (
             <p className="leading-tight" key={idx}>
+              {paragraph}
+              {paragraph}
+              {paragraph}
               {paragraph}
             </p>
           ))}

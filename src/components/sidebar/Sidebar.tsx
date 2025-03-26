@@ -15,7 +15,7 @@ export default function Sidebar({ initialPosition }: any) {
         <div className="absolute top-1/2 left-0 flex w-full -translate-y-1/2 flex-col items-start text-base leading-tight">
           {data.map((section, index) => (
             <div className="group relative" key={index}>
-              <button className="z-20 w-full cursor-pointer px-3 font-semibold text-zinc-600">
+              <button className="z-20 w-full cursor-pointer px-3 font-semibold text-zinc-200">
                 {section.SectionTitle}
               </button>
             </div>

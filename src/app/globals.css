@@ -27,7 +27,7 @@
   --primary-foreground: var(--color-orange-600);
   --primary-background: var(--color-orange-950);
 
-  --border: #303030;
+  --border: #323232;
 }
 
 @theme inline {
@@ -42,7 +42,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0d0d0d;
+    --background: #151515;
     --foreground: #ededed;
   }
 }

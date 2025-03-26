@@ -9,7 +9,8 @@ import ScrollVideo from "@/components/scroll-video/ScrollVideo";
 
 export default function Home() {
   return (
-    <div className="flex h-dvh w-full">
+    <div className="relative flex h-dvh w-full">
+      {/* <div className="fixed inset-0 z-50 bg-gray-400 mix-blend-overlay" /> */}
       <header className="fixed flex h-screen w-[63%] translate-x-[1/2] justify-start overflow-hidden">
         <Sidebar />
         <ScrollVideo />

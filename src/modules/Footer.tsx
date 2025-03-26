@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="inset-shadow sticky bottom-0 -z-10 h-auto w-full bg-background p-6 pt-8 text-zinc-600">
+    <div className="inset-shadow sticky bottom-0 -z-10 h-auto w-full border-l border-border bg-background p-6 pt-8 text-zinc-600">
       <h3 className="pb-6 text-lg font-bold text-nowrap text-zinc-200">
         More informations
       </h3>
