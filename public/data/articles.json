@@ -1,7 +1,7 @@
 [
   {
-    "SectionTitle": "Performances",
-    "SectionArticles": [
+    "sectionTitle": "Performances",
+    "sectionArticles": [
       {
         "title": "Project 1",
         "date": "2022",
@@ -47,8 +47,8 @@
     ]
   },
   {
-    "SectionTitle": "Teaching",
-    "SectionArticles": [
+    "sectionTitle": "Teaching",
+    "sectionArticles": [
       {
         "title": "Project 1",
         "date": "2022",
@@ -94,8 +94,8 @@
     ]
   },
   {
-    "SectionTitle": "Background",
-    "SectionArticles": [
+    "sectionTitle": "Background",
+    "sectionArticles": [
       {
         "title": "Project 1",
         "date": "2022",
@@ -126,7 +126,7 @@
       },
       {
         "title": "Project 1",
-        "date": "2022",
+        "dste": "2022",
         "topParagraphs": [
           "Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce congue erat a purus varius, at malesuada mi sodales.",
           "Mauris eget justo non urna bibendum pharetra. Proin in felis in justo pellentesque interdum. Ut sagittis nulla at sapien condimentum, eget tincidunt nisi suscipit."

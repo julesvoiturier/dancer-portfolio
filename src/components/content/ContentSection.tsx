@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import ContentSectionArticle from "./ContentSectionArticle";
-import { Article } from "@/utils/global.types";
+import { Article } from "@/utils/types/global.types";
 import { useLenis } from "lenis/react";
+import useAppStateStore from "@/stores/appStateStore";
 
 interface ContentSectionProps {
   data: Article[];
@@ -17,24 +18,24 @@ export default function ContentSection({
   index,
 }: ContentSectionProps) {
   const lenis = useLenis();
+  const { updateActiveSectionId } = useAppStateStore();
 
   const sectionContainerRef = useRef<HTMLElement>(null);
   const sectionTitleRef = useRef<HTMLDivElement>(null);
-  // const isFullSectionScrolled = useRef<boolean>(false);
   const [isFullSectionScrolled, setIsFullSectionScrolled] = useState(false);
   const sectionTitleHeight = sectionTitleRef.current?.offsetHeight || 0;
 
   const handleLenisScroll = useCallback(() => {
     if (!sectionContainerRef.current) return;
-    const { bottom } = sectionContainerRef.current.getBoundingClientRect();
+    const { top, bottom } = sectionContainerRef.current.getBoundingClientRect();
+
+    if (top <= 0) updateActiveSectionId(index);
 
     if (bottom <= 240) {
       setIsFullSectionScrolled(true);
     } else {
       setIsFullSectionScrolled(false);
     }
-
-    // console.log(isFullSectionScrolled.current);
   }, []);
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export default function ContentSection({
       </div>
 
       <div className={`relative min-h-dvh`}>
-        {data.map((article: Article, index: number) => (
+        {data?.map((article, index) => (
           <ContentSectionArticle
             {...article}
             key={index}

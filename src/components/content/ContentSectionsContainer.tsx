@@ -1,23 +1,19 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import { Section } from "@/utils/types";
 import ContentSection from "./ContentSection";
 
-export default function ContentSectionsContainer({ sectionsData }: any) {
-  const contentSectionRef = useRef<HTMLDivElement>(null);
+interface Props {
+  sectionsArray: Section[];
+}
 
-  useEffect(() => {
-    console.log("height", contentSectionRef.current?.offsetHeight);
-  }, []);
-
+export default function SectionsContainer({ sectionsArray }: Props) {
   return (
-    <div ref={contentSectionRef} className="relative border-l border-border">
-      {sectionsData?.map((section, index) => (
+    <div className="relative border-l border-border">
+      {sectionsArray?.map((section, index) => (
         <ContentSection
           key={index}
           index={index}
-          data={section.SectionArticles}
-          title={section.SectionTitle}
+          title={section.sectionTitle}
+          data={section.sectionArticles}
         />
       ))}
     </div>

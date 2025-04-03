@@ -6,3 +6,8 @@ export interface Article {
   image: string;
   imageDescription: string;
 }
+
+export interface Section {
+  sectionTitle: string;
+  sectionArticles: Article[];
+}
