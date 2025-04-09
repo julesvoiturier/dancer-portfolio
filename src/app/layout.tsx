@@ -8,7 +8,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <ReactLenis root options={{ duration: 1.5, smoothWheel: true }}>
+    <ReactLenis root options={{ duration: 2, smoothWheel: true }}>
       <html lang="en">
         <body className={`antialiased`}>{children}</body>
       </html>

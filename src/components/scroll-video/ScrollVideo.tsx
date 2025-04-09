@@ -1,30 +1,58 @@
+// "use client";
+
+// import { useRef } from "react";
+// import { useMotionValueEvent, useScroll, useTransform } from "motion/react";
+// import useCanvasRender from "@/hooks/useCanvasRender";
+
+// interface ScrollVideoProps {
+//   images: HTMLImageElement[];
+// }
+
+// export function ScrollVideo({ images }: ScrollVideoProps) {
+//   const ref = useRef<HTMLCanvasElement>(null);
+//   const { scrollYProgress } = useScroll();
+//   const totalFrames = images.length;
+
+//   const render = useCanvasRender(images);
+
+//   const currentIndex = useTransform(
+//     scrollYProgress,
+//     [0, 1],
+//     [0, totalFrames - 1],
+//   );
+
+//   useMotionValueEvent(currentIndex, "change", (latest) => {
+//     const scaledIndex = Math.round(latest);
+//     render(scaledIndex, ref);
+//   });
+
+//   return (
+//     <div className="h-full w-full">
+//       <canvas
+//         className="-z-20 scale-135 object-fill grayscale"
+//         ref={ref}
+//       ></canvas>
+//     </div>
+//   );
+// }
+
+// export default ScrollVideo;
+
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useMotionValueEvent, useScroll, useTransform } from "motion/react";
-import useAppStateStore from "@/stores/appStateStore";
-import useFramesLoader from "@/hooks/useFramesLoader"; // Import the custom image loader hook
-import useCanvasRender from "@/hooks/useCanvasRender"; // Import the custom render hook
+import useCanvasRender from "@/hooks/useCanvasRender";
 
-export function ScrollVideo() {
+interface ScrollVideoProps {
+  images: HTMLImageElement[];
+}
+
+export default function ScrollVideo({ images }: ScrollVideoProps) {
   const ref = useRef<HTMLCanvasElement>(null);
   const { scrollYProgress } = useScroll();
-  const [isClient, setIsClient] = useState(false);
+  const totalFrames = images.length;
 
-  // Using the useImageLoader hook to load images
-  const totalFrames = 2045;
-  const { images, loadingPercentage } = useFramesLoader(totalFrames);
-
-  // Update the app state with the loading percentage
-  useEffect(() => {
-    if (loadingPercentage >= 0 && loadingPercentage <= 100) {
-      useAppStateStore
-        .getState()
-        .updateFramesLoadingPercentage(loadingPercentage);
-    }
-  }, [loadingPercentage]);
-
-  // Using the useCanvasRender hook to handle rendering
   const render = useCanvasRender(images);
 
   const currentIndex = useTransform(
@@ -33,44 +61,29 @@ export function ScrollVideo() {
     [0, totalFrames - 1],
   );
 
+  useEffect(() => {
+    const canvas = ref.current;
+    if (canvas && canvas.parentElement) {
+      const parentWidth = canvas.parentElement.clientWidth;
+      const parentHeight = canvas.parentElement.clientHeight;
+
+      canvas.width = parentWidth;
+      canvas.height = parentHeight;
+    }
+
+    if (images.length) {
+      render(0, ref);
+    }
+  }, [images, render]);
+
   useMotionValueEvent(currentIndex, "change", (latest) => {
-    const scaledIndex = Math.round(latest); // Round to get an integer index
-    render(scaledIndex, ref);
+    const index = Math.round(latest);
+    render(index, ref);
   });
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Resize the canvas when window size changes
-  useEffect(() => {
-    const handleResize = () => {
-      if (ref.current) {
-        const canvas = ref.current;
-        const parent = canvas.parentElement;
-        if (parent) {
-          canvas.width = parent.clientWidth;
-          canvas.height = parent.clientHeight;
-        }
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="h-full w-full">
-      <canvas
-        className="-z-20 scale-135 object-fill grayscale"
-        ref={ref}
-      ></canvas>
+      <canvas className="-z-20 scale-135 object-fill grayscale" ref={ref} />
     </div>
   );
 }
-
-export default ScrollVideo;

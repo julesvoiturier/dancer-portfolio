@@ -12,20 +12,22 @@ function SidebarHeader() {
   return (
     <div className="text-primary-foreground">
       <p className="text-subtitle leading-none font-bold">{TITLE}</p>
-      <p className="text-base font-semibold">{SUBTITLE}</p>
+      <p className="text-base leading-none font-semibold">{SUBTITLE}</p>
     </div>
   );
 }
 
 function NavItem({ title, isActive }: { title: string; isActive: boolean }) {
+  const opacity = isActive ? "opacity-100" : "opacity-30";
+  const background = isActive ? "bg-background" : "bg-transparent";
+
   return (
     <button
       aria-current={isActive ? "page" : undefined}
-      className={`${
-        isActive ? "opacity-100" : "opacity-30"
-      } z-20 w-full cursor-pointer text-left font-semibold text-zinc-200 transition-opacity duration-200`}
+      className={`relative z-20 w-fit cursor-pointer text-left font-semibold text-zinc-200 transition-opacity duration-200 ${opacity}`}
     >
       {title}
+      <span className={`absolute inset-0 -z-10 blur-lg ${background}`} />
     </button>
   );
 }
@@ -33,7 +35,7 @@ function NavItem({ title, isActive }: { title: string; isActive: boolean }) {
 function SidebarFooter() {
   return (
     <Link
-      className="text-base font-semibold text-primary-foreground"
+      className="cursor-pointer text-base font-semibold text-primary-foreground"
       href="/contact"
     >
       {FOOTER_LINK_TEXT}

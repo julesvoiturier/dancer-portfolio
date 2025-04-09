@@ -7,7 +7,7 @@ interface Props {
 
 export default function SectionsContainer({ sectionsArray }: Props) {
   return (
-    <div className="relative border-l border-border">
+    <div className="relative border-l border-border bg-background">
       {sectionsArray?.map((section, index) => (
         <ContentSection
           key={index}
