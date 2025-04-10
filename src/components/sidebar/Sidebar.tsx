@@ -5,14 +5,16 @@ import useAppStateStore from "@/stores/appStateStore";
 import sectionsData from "./../../../public/data/articles.json";
 
 const TITLE = "Leelou Lancel";
-const SUBTITLE = "Dancer portfolio";
+const SUBTITLE = "contemporary dancer";
 const FOOTER_LINK_TEXT = "Contact me";
 
 function SidebarHeader() {
   return (
     <div className="text-primary-foreground">
-      <p className="text-subtitle leading-none font-bold">{TITLE}</p>
-      <p className="text-base leading-none font-semibold">{SUBTITLE}</p>
+      <div className="flex gap-3 text-subtitle leading-none font-bold">
+        {TITLE}
+      </div>
+      <div className="text-base">{SUBTITLE}</div>
     </div>
   );
 }

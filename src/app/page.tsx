@@ -1,50 +1,53 @@
 "use client";
 
-import sectionsData from "./../../public/data/articles.json";
-import SectionsContainer from "@/components/content/ContentSectionsContainer";
-import Footer from "@/components/content/Footer";
-import Sidebar from "@/components/sidebar/Sidebar";
-import ScrollVideo from "@/components/scroll-video/ScrollVideo";
-import Loader from "@/components/loader/Loader";
 import { useState, useEffect } from "react";
+import data from "./../../public/data/articles.json";
+import Footer from "@/components/footer/Footer";
+import Sidebar from "@/components/sidebar/Sidebar";
+import ScrollVideo from "@/components/video-frames-scroll/VideoFramesScroll";
+import Loader from "@/components/loader/Loader";
+import ArticlesFeed from "@/components/articles-feed/ArticlesFeed";
 
 export default function Home() {
-  const totalFrames = 2045;
   const [images, setImages] = useState<HTMLImageElement[] | null>(null);
   const [opacity, setOpacity] = useState(0);
+  const totalFrames = 2045;
 
   useEffect(() => {
-    if (images) {
-      setOpacity(1);
-    }
+    if (images) setOpacity(1);
   }, [images]);
+
+  if (!images) {
+    return (
+      <div className="relative flex w-full">
+        <div className="fixed inset-0 z-60 bg-blue-100 mix-blend-overlay" />
+        <div className="fixed inset-0 z-60 bg-zinc-900 mix-blend-screen" />
+        <div className="fixed inset-0 z-50 bg-[url('/img/bg-texture.png')] bg-cover bg-center opacity-70 mix-blend-color-burn" />
+        <Loader totalFrames={totalFrames} onComplete={setImages} />
+      </div>
+    );
+  }
 
   return (
     <div className="relative flex w-full">
-      {/* BG layers */}
-      <div className="fixed inset-0 z-60 bg-red-100 mix-blend-overlay" />
-      <div className="fixed inset-0 z-50 bg-[url('/img/bg-texture.png')] bg-cover bg-center opacity-75 mix-blend-color-burn" />
+      <div className="fixed inset-0 z-60 bg-blue-100 mix-blend-overlay" />
+      <div className="fixed inset-0 z-60 bg-zinc-900 mix-blend-screen" />
+      <div className="fixed inset-0 z-50 bg-[url('/img/bg-texture.png')] bg-cover bg-center opacity-70 mix-blend-color-burn" />
 
-      {!images ? (
-        <Loader totalFrames={totalFrames} onComplete={setImages} />
-      ) : (
-        <div
-          style={{ opacity }}
-          className="transition-opacity duration-500 ease-in-out"
-        >
-          {/* Left fixed content */}
-          <header className="fixed top-0 left-0 flex h-screen w-[63%] justify-start">
-            <Sidebar />
-            <ScrollVideo images={images} />
-          </header>
+      <div
+        style={{ opacity }}
+        className="transition-opacity duration-500 ease-in-out"
+      >
+        <header className="fixed top-0 left-0 flex h-screen w-[60%] justify-start">
+          <Sidebar />
+          <ScrollVideo images={images} />
+        </header>
 
-          {/* Right scrollable content */}
-          <main className="ml-[63%] min-h-screen w-[37%] bg-background">
-            <SectionsContainer sectionsArray={sectionsData} />
-            <Footer />
-          </main>
-        </div>
-      )}
+        <main className="ml-[60%] min-h-screen w-[40%] bg-background">
+          <ArticlesFeed sectionsArray={data} />
+          <Footer />
+        </main>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
 
-interface ContentSectionArticleProps {
+interface ArticleProps {
   title: string;
   date: string;
   topParagraphs: string[];
@@ -14,7 +14,7 @@ interface ContentSectionArticleProps {
   sectionTitleHeight: number;
 }
 
-export default function ContentSectionArticle({
+export default function Article({
   title,
   date,
   topParagraphs,
@@ -23,7 +23,7 @@ export default function ContentSectionArticle({
   imageDescription,
   index,
   sectionTitleHeight,
-}: ContentSectionArticleProps) {
+}: ArticleProps) {
   const lenis = useLenis();
 
   const containerRef = useRef<HTMLElement | null>(null);
@@ -53,7 +53,7 @@ export default function ContentSectionArticle({
     <section ref={containerRef} className="relative">
       <div
         ref={titleRef}
-        className={`bg-opacity-90 sticky z-30 w-full border-t border-border bg-background px-8 py-5`}
+        className={`bg-opacity-90 sticky z-30 w-full border-t border-border-glass bg-background px-8 py-5`}
         style={{
           top: `${dynamicTopValue}px`,
           position: hasTitleReachedTop ? "fixed" : "sticky",
@@ -63,7 +63,7 @@ export default function ContentSectionArticle({
           <p className="left:10 absolute text-sm text-nowrap lg:right-5">
             {date}
           </p>
-          <div className="left:15 absolute h-[1px] w-dvw bg-border text-sm text-nowrap opacity-40 mix-blend-exclusion lg:right-16" />
+          <div className="left:15 absolute h-[1px] w-dvw bg-border-glass text-sm text-nowrap mix-blend-exclusion lg:right-16" />
           <h3 className="absolute left-9 text-lg font-bold text-nowrap text-zinc-200">
             {title}
           </h3>

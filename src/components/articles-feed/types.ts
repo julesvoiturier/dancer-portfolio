@@ -2,12 +2,12 @@ export interface Article {
   title: string;
   date: string;
   topParagraphs: string[];
-  bottomParagraphs: string[];
   image: string;
   imageDescription: string;
+  bottomParagraphs: string[];
 }
 
-export interface Section {
+export interface ArticlesSection {
   sectionTitle: string;
   sectionArticles: Article[];
 }

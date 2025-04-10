@@ -22,12 +22,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #262626;
 
-  --primary-foreground: var(--color-red-600);
-  --primary-background: var(--color-red-950);
+  --primary-foreground: var(--color-red-700);
+  --primary-background: var(--color-zinc-950);
 
-  --border: #323232;
+  --border: #232323;
+  --border-glass: #23232377;
 }
 
 @theme inline {
@@ -38,6 +39,7 @@
   --color-primary-background: var(--primary-background);
 
   --color-border: var(--border);
+  --color-border-glass: var(--border-glass);
 }
 
 @media (prefers-color-scheme: dark) {
