@@ -2,7 +2,7 @@ import ContentSection from "./ArticlesSection";
 import { ArticlesSection } from "./types";
 
 interface ArticlesFeedProps {
-  sectionsArray: ArticlesSection[];
+  sectionsArray: Array<ArticlesSection>;
 }
 
 export default function ArticlesFeed({ sectionsArray }: ArticlesFeedProps) {

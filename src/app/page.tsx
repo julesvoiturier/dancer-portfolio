@@ -21,7 +21,7 @@ export default function Home() {
     return (
       <div className="relative flex w-full">
         <div className="fixed inset-0 z-60 bg-blue-100 mix-blend-overlay" />
-        <div className="fixed inset-0 z-60 bg-zinc-900 mix-blend-screen" />
+        {/* <div className="fixed inset-0 z-60 bg-zinc-900 mix-blend-screen" /> */}
         <div className="fixed inset-0 z-50 bg-[url('/img/bg-texture.png')] bg-cover bg-center opacity-70 mix-blend-color-burn" />
         <Loader totalFrames={totalFrames} onComplete={setImages} />
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="relative flex w-full">
       <div className="fixed inset-0 z-60 bg-blue-100 mix-blend-overlay" />
-      <div className="fixed inset-0 z-60 bg-zinc-900 mix-blend-screen" />
+      {/* <div className="fixed inset-0 z-60 bg-zinc-900 mix-blend-screen" /> */}
       <div className="fixed inset-0 z-50 bg-[url('/img/bg-texture.png')] bg-cover bg-center opacity-70 mix-blend-color-burn" />
 
       <div
@@ -40,7 +40,10 @@ export default function Home() {
       >
         <header className="fixed top-0 left-0 flex h-screen w-[60%] justify-start">
           <Sidebar />
+
+          {/* <div className="flex h-full w-full items-center justify-center p-20"> */}
           <ScrollVideo images={images} />
+          {/* </div> */}
         </header>
 
         <main className="ml-[60%] min-h-screen w-[40%] bg-background">

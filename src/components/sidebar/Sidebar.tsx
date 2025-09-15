@@ -4,17 +4,17 @@ import Link from "next/link";
 import useAppStateStore from "@/stores/appStateStore";
 import sectionsData from "./../../../public/data/articles.json";
 
-const TITLE = "Leelou Lancel";
+const TITLE = "LEELOU LANCEL";
 const SUBTITLE = "contemporary dancer";
 const FOOTER_LINK_TEXT = "Contact me";
 
 function SidebarHeader() {
   return (
-    <div className="text-primary-foreground">
+    <div className="text-zinc-200">
       <div className="flex gap-3 text-subtitle leading-none font-bold">
         {TITLE}
       </div>
-      <div className="text-base">{SUBTITLE}</div>
+      <div className="text-base leading-none">{SUBTITLE}</div>
     </div>
   );
 }
@@ -37,7 +37,7 @@ function NavItem({ title, isActive }: { title: string; isActive: boolean }) {
 function SidebarFooter() {
   return (
     <Link
-      className="cursor-pointer text-base font-semibold text-primary-foreground"
+      className="cursor-pointer text-base font-semibold text-zinc-200"
       href="/contact"
     >
       {FOOTER_LINK_TEXT}

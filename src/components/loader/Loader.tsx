@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import useFramesLoader from "@/hooks/useFramesLoader";
 import useAppStateStore from "@/stores/appStateStore";
 
@@ -8,7 +8,7 @@ const LOADER_TEXT = "Loading portfolio content";
 
 interface LoaderProps {
   totalFrames: number;
-  onComplete: (images: HTMLImageElement[]) => void;
+  onComplete: (images: Array<HTMLImageElement>) => void;
 }
 
 const Loader = ({ totalFrames, onComplete }: LoaderProps) => {

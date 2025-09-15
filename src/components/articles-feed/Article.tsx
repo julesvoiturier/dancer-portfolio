@@ -6,8 +6,8 @@ import { useLenis } from "lenis/react";
 interface ArticleProps {
   title: string;
   date: string;
-  topParagraphs: string[];
-  bottomParagraphs: string[];
+  topParagraphs: Array<string>;
+  bottomParagraphs: Array<string>;
   image: string;
   imageDescription: string;
   index: number;
@@ -36,11 +36,9 @@ export default function Article({
   const handleLenisScroll = useCallback(() => {
     if (!containerRef.current) return;
     const { top } = containerRef.current.getBoundingClientRect();
-    if (top <= dynamicTopValue) {
-      setHasTitleReachedTop(true);
-    } else {
-      setHasTitleReachedTop(false);
-    }
+    top <= dynamicTopValue
+      ? setHasTitleReachedTop(true)
+      : setHasTitleReachedTop(false);
   }, []);
 
   useEffect(() => {
@@ -63,7 +61,7 @@ export default function Article({
           <p className="left:10 absolute text-sm text-nowrap lg:right-5">
             {date}
           </p>
-          <div className="left:15 absolute h-[1px] w-dvw bg-border-glass text-sm text-nowrap mix-blend-exclusion lg:right-16" />
+          {/* <div className="left:15 absolute h-[1px] w-dvw bg-border-glass text-sm text-nowrap mix-blend-exclusion lg:right-16" /> */}
           <h3 className="absolute left-9 text-lg font-bold text-nowrap text-zinc-200">
             {title}
           </h3>

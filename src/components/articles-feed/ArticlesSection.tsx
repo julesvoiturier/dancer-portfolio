@@ -7,7 +7,7 @@ import useAppStateStore from "@/stores/appStateStore";
 import ContentSectionArticle from "./Article";
 
 interface ArticlesSectionProps {
-  data: Article[];
+  data: Array<Article>;
   title: string;
   index: number;
 }

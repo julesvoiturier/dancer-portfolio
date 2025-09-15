@@ -1,16 +1,16 @@
 "use client";
 
-import { Ref, RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { useMotionValueEvent, useScroll, useTransform } from "motion/react";
 import useCanvasRender from "@/hooks/useCanvasRender";
 
 interface VideoFrameScrollProps {
-  images: HTMLImageElement[];
+  images: Array<HTMLImageElement>;
 }
 
 export default function VideoFramesScroll({ images }: VideoFrameScrollProps) {
-  const { scrollYProgress } = useScroll();
   const render = useCanvasRender(images);
+  const { scrollYProgress } = useScroll();
   const currentIndex = useTransform(
     scrollYProgress,
     [0, 1],
@@ -26,7 +26,8 @@ export default function VideoFramesScroll({ images }: VideoFrameScrollProps) {
 
   useEffect(() => {
     const canvas = ref.current;
-    if (canvas && canvas.parentElement) {
+
+    if (canvas?.parentElement) {
       const parentWidth = canvas.parentElement.offsetWidth;
       const parentHeight = canvas.parentElement.offsetHeight;
       canvas.width = parentWidth;
@@ -37,8 +38,8 @@ export default function VideoFramesScroll({ images }: VideoFrameScrollProps) {
   }, [images, render]);
 
   return (
-    <div className="h-full w-full overflow-hidden bg-background">
-      <canvas ref={ref} className="-z-20 scale-135 object-fill grayscale" />
+    <div className="aspect-square w-full overflow-hidden border border-border-glass bg-background">
+      <canvas ref={ref} className="-z-20 scale-150 object-fill grayscale" />
     </div>
   );
 }

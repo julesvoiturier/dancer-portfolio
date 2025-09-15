@@ -1,13 +1,13 @@
 export interface Article {
   title: string;
   date: string;
-  topParagraphs: string[];
+  topParagraphs: Array<string>;
   image: string;
   imageDescription: string;
-  bottomParagraphs: string[];
+  bottomParagraphs: Array<string>;
 }
 
 export interface ArticlesSection {
   sectionTitle: string;
-  sectionArticles: Article[];
+  sectionArticles: Array<Article>;
 }
