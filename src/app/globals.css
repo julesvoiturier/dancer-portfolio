@@ -12,27 +12,39 @@
 @theme {
   --font-display: "CabinetGrotesk", "sans-serif";
 
-  --text-small: 1rem;
-  --text-base: 1.3rem;
-  --text-large: 1.6rem;
+  --text-small: 0.8rem;
+  --text-base: 1.1rem;
+  --text-large: 1.4rem;
 
-  --text-title: 4.3rem;
-  --text-subtitle: 2.6rem;
+  --text-title: 3rem;
+  --text-subtitle: 1.8rem;
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #262626;
+
+  --primary-foreground: var(--color-red-700);
+  --primary-background: var(--color-zinc-950);
+
+  --border: #232323;
+  --border-glass: #23232377;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-background: var(--primary-background);
+
+  --color-border: var(--border);
+  --color-border-glass: var(--border-glass);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #080808;
     --foreground: #ededed;
   }
 }
